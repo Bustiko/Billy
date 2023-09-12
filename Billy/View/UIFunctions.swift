@@ -31,9 +31,11 @@ struct UIFunctions {
         var config = configuration
         
         var container = AttributeContainer()
-        container.font = UIFont(name: "Chalkboard SE-Regular", size: size)
-        
+        container.font = UIFont(name: "ChalkboardSE-Regular", size: size)
         config.attributedTitle = AttributedString(text, attributes: container)
+        config.cornerStyle = .capsule
+        
+        button.configuration = config
         
         
         return button
@@ -45,7 +47,7 @@ struct UIFunctions {
         let textField = UITextField()
         
         textField.placeholder = placeHolder
-        textField.font = UIFont(name: "Chalkboard SE-Regular", size: size)
+        textField.font = UIFont(name: "ChalkboardSE-Regular", size: size)
         
         
         

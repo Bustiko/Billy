@@ -25,6 +25,8 @@ class TextFieldView : UIView {
     }
     
     internal func setupViews() {
+        self.backgroundColor = UIColor.systemTeal
+        
         let textField = uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
         
         NSLayoutConstraint.activate([

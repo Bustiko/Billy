@@ -23,7 +23,9 @@ class ResultView : UIView {
     }
     
     internal func setupViews() {
-        let label = uiFunctions.makeLabel(withText: text, withSize: 50, withFont: "Chalkboard SE-Regular", alignment: .center)
+        self.backgroundColor = UIColor.systemTeal
+        
+        let label = uiFunctions.makeLabel(withText: text, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: self.centerXAnchor),

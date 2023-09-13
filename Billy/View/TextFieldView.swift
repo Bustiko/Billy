@@ -7,6 +7,8 @@
 
 import UIKit
 
+var textField = UITextField()
+
 class TextFieldView : UIView {
     
     let uiFunctions = UIFunctions()
@@ -27,7 +29,8 @@ class TextFieldView : UIView {
     internal func setupViews() {
         self.backgroundColor = UIColor.secondarySystemFill
         
-        let textField = uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
+        textField =  uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
+
         
         self.addSubview(textField)
         textField.translatesAutoresizingMaskIntoConstraints = false

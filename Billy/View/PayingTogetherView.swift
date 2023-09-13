@@ -6,6 +6,7 @@
 //
 import UIKit
 
+var numberLabel = UILabel()
 
 struct PayingTogetherView {
     
@@ -21,13 +22,13 @@ struct PayingTogetherView {
     
     var tipButtons : [UIButton] = []
     
-    internal mutating func setupViews(on view : UIView, target : Any?, action : Selector?) {
+    internal mutating func setupViews(on view : UIView, target : Any?, action : Selector?, tipAction : Selector?) {
         let label1 = uiFunctions.makeLabel(withText: "Bill Total :", withSize: 20, withFont: font, alignment: .left)
         let textFieldView = TextFieldView(placeHolder: "27.56", textSize: 40)
         
         let label2 = uiFunctions.makeLabel(withText: "Number of people :", withSize: 20, withFont: font, alignment: .left)
         let minusButton = uiFunctions.makePlusMinusButton(withText: "-")
-        let numberLabel = uiFunctions.makeLabel(withText: "1", withSize: 30, withFont: font, alignment: .center)
+        numberLabel = uiFunctions.makeLabel(withText: "1", withSize: 30, withFont: font, alignment: .center)
         let plusButton = uiFunctions.makePlusMinusButton(withText: "+")
         
         let label3 = uiFunctions.makeLabel(withText: "Tip :", withSize: 20, withFont: font, alignment: .left)
@@ -57,6 +58,11 @@ struct PayingTogetherView {
         
         for button in tipButtons {
             view.addSubview(button)
+            
+            if let safeTipAction = tipAction {
+                button.addTarget(target, action: safeTipAction, for: .touchUpInside)
+            }
+            
         }
         
         

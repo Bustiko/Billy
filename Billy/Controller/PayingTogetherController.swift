@@ -13,9 +13,14 @@ class PayingTogetherController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiView.setupViews(on: view)
         view.backgroundColor = .white
-        
+        uiView.setupViews(on: view, target: self, action: #selector(buttonPressed))
+    }
+    
+    @objc func buttonPressed() {
+        let destinationVC = ResultsPageController()
+        destinationVC.modalPresentationStyle = .fullScreen
+        self.present(destinationVC, animated: true)
     }
     
 }

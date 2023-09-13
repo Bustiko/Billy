@@ -21,14 +21,14 @@ struct PayingTogetherView {
     
     var tipButtons : [UIButton] = []
     
-    internal mutating func setupViews(on view : UIView) {
+    internal mutating func setupViews(on view : UIView, target : Any?, action : Selector?) {
         let label1 = uiFunctions.makeLabel(withText: "Bill Total :", withSize: 20, withFont: font, alignment: .left)
         let textFieldView = TextFieldView(placeHolder: "27.56", textSize: 40)
         
         let label2 = uiFunctions.makeLabel(withText: "Number of people :", withSize: 20, withFont: font, alignment: .left)
-        let minusButton = uiFunctions.makeButton(withText: "-", withTextSize: 40, configuration: UIButton.Configuration.tinted())
-        let numberLabel = uiFunctions.makeLabel(withText: "2", withSize: 30, withFont: font, alignment: .center)
-        let plusButton = uiFunctions.makeButton(withText: "+", withTextSize: 40, configuration: UIButton.Configuration.tinted())
+        let minusButton = uiFunctions.makePlusMinusButton(withText: "-")
+        let numberLabel = uiFunctions.makeLabel(withText: "1", withSize: 30, withFont: font, alignment: .center)
+        let plusButton = uiFunctions.makePlusMinusButton(withText: "+")
         
         let label3 = uiFunctions.makeLabel(withText: "Tip :", withSize: 20, withFont: font, alignment: .left)
         for text in tipButtonTexts {
@@ -38,6 +38,10 @@ struct PayingTogetherView {
         
         
         let bigButton = uiFunctions.makeButton(withText: "Calculate", withTextSize: 20, configuration: UIButton.Configuration.tinted())
+        
+        if let safeAction = action {
+            bigButton.addTarget(target, action: safeAction, for: .touchUpInside)
+        }
         
         
         view.addSubview(label1)
@@ -73,8 +77,9 @@ struct PayingTogetherView {
             minusButton.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
             minusButton.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
             minusButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            minusButton.trailingAnchor.constraint(equalTo: numberLabel.leadingAnchor, constant: -96),
+            minusButton.trailingAnchor.constraint(equalTo: numberLabel.leadingAnchor, constant: -90),
             minusButton.heightAnchor.constraint(equalToConstant: 40),
+            minusButton.widthAnchor.constraint(equalToConstant: 50),
             
             numberLabel.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
             numberLabel.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
@@ -83,7 +88,8 @@ struct PayingTogetherView {
             plusButton.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
             plusButton.heightAnchor.constraint(equalToConstant: 40),
             plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
-            plusButton.leadingAnchor.constraint(equalTo: numberLabel.trailingAnchor, constant: 100),
+
+            plusButton.widthAnchor.constraint(equalToConstant: 50),
             
             label3.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 16),
             label3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

@@ -23,6 +23,25 @@ struct UIFunctions {
     }
     
     
+    internal func makePlusMinusButton(withText text : String) -> UIButton {
+        
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        var configuration = UIButton.Configuration.tinted()
+        configuration.cornerStyle = .capsule
+        configuration.title = text
+        configuration.titleAlignment = .center
+
+
+        
+        button.configuration = configuration
+        
+        
+        return button
+    }
+    
+    
     internal func makeButton(withText text : String, withTextSize size : CGFloat, configuration : UIButton.Configuration) -> UIButton {
         
         let button = UIButton()
@@ -59,7 +78,7 @@ struct UIFunctions {
         let view = UIStackView()
 
         view.axis = .vertical
-        view.spacing = 20
+        view.spacing = 25
 
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

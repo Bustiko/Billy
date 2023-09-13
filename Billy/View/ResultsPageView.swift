@@ -12,15 +12,26 @@ struct ResultsPageView {
     let uiFunctions = UIFunctions()
     var calculationLogic = CalculationLogic()
     
-    internal mutating func setupViews(on view : UIView) {
-        let label = uiFunctions.makeLabel(withText: "The Lucky One Is :", withSize: 20, withFont: "ChalkboardSE-Regular", alignment: .left)
-        let resultView = ResultView(text: calculationLogic.calculateAmount())
+    var text: String
+    
+    init(text: String) {
+        self.text = text
+    }
+    
+    internal mutating func setupViews(on view : UIView, target: Any?, action: Selector?) {
+        let label = uiFunctions.makeLabel(withText: text, withSize: 20, withFont: "ChalkboardSE-Regular", alignment: .left)
+        let resultView = ResultView()
         let button = uiFunctions.makeButton(withText: "Main Menu", withTextSize: 20, configuration: UIButton.Configuration.tinted())
         
         view.addSubview(label)
         view.addSubview(resultView)
         resultView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
+        
+        if let safeAction = action {
+            button.addTarget(target, action: safeAction, for: .touchUpInside)
+        }
+        
         
         
         NSLayoutConstraint.activate([

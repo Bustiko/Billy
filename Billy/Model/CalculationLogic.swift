@@ -14,7 +14,7 @@ struct CalculationLogic {
     
     var amountPerPerson = 0.0
     
-    internal mutating func calculateAmount() -> String {
+    internal mutating func calculateAmount() {
         
         if let safeText = textField.text, let safeNumber = numberLabel.text {
             if let totalAmount = Double(safeText), let totalNumber = Double(safeNumber) {
@@ -22,7 +22,7 @@ struct CalculationLogic {
             }
         }
         
-        return String(format: "%.2f", amountPerPerson)
+        resultText = String(format: "%.2f", amountPerPerson)
     }
     
     internal func calculateNewNumber(button: UIButton?) {

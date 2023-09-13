@@ -12,19 +12,29 @@ struct WhoPaysView {
     let uiFunctions = UIFunctions()
     
     
-    internal func setupViews(on view : UIView) {
+    internal func setupViews(on view : UIView, target: Any?, action: Selector?) {
         let label = uiFunctions.makeLabel(withText: "Enter each name one by one :", withSize: 20, withFont: "ChalkboardSE-Regular", alignment: .left)
         let scrollView = NamesScrollView()
         let plusButton = uiFunctions.makePlusMinusButton(withText: "+")
         let doneButton = uiFunctions.makeButton(withText: "Done", withTextSize: 20, configuration: UIButton.Configuration.filled())
-        
-        
+
         view.addSubview(label)
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(plusButton)
         view.addSubview(doneButton)
+        
+        if let safeAction = action {
+            doneButton.addTarget(target, action: safeAction, for: .touchUpInside)
+            plusButton.addTarget(target, action: safeAction, for: .touchUpInside)
 
+        }
+        
+        let textFieldView = TextFieldView(placeHolder: "Name", textSize: 25)
+        textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        textFieldView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        stackView.addArrangedSubview(textFieldView)
+        
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),

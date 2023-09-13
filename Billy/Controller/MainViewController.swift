@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         uiView.setupViews(on: view, target: self, action: #selector(buttonPressed))
     }
     

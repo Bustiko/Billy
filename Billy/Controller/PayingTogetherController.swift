@@ -10,7 +10,7 @@ import UIKit
 class PayingTogetherController : UIViewController {
     
     var uiView = PayingTogetherView()
-    let calculationLogic = CalculationLogic()
+    var calculationLogic = CalculationLogic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +23,16 @@ class PayingTogetherController : UIViewController {
     }
     
     @objc func tipButtonPressed(_ sender: UIButton?) {
+        for button in tipButtons {
+            button.isSelected = false
+        }
+        sender?.isSelected = true
         calculationLogic.determineTip(button: sender)
     }
     
     @objc func buttonPressed() {
-        let destinationVC = ResultsPageController()
+        calculationLogic.calculateAmount()
+        let destinationVC = ResultsPageController(text: "Amount to be paid per person: ")
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true)
     }

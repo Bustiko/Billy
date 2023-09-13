@@ -7,6 +7,8 @@
 
 import UIKit
 
+var stackView = UIStackView()
+
 class NamesScrollView : UIScrollView {
     
     let uiFunctions = UIFunctions()
@@ -21,15 +23,7 @@ class NamesScrollView : UIScrollView {
     }
     
     internal func setupView() {
-        let stackView = uiFunctions.makeStackView()
-        
-        for _ in 0...25 {
-            let textFieldView = TextFieldView(placeHolder: "Name", textSize: 25)
-            textFieldView.translatesAutoresizingMaskIntoConstraints = false
-            textFieldView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            stackView.addArrangedSubview(textFieldView)
-            
-        }
+        stackView = uiFunctions.makeStackView()
         
         addSubview(stackView)
         

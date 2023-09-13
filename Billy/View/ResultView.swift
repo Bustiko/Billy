@@ -6,15 +6,12 @@
 //
 
 import UIKit
-
+var resultText = ""
 class ResultView : UIView {
     
     let uiFunctions = UIFunctions()
-    let text : String
-
     
-    init(text : String) {
-        self.text = text
+    init() {
         super.init(frame: .zero)
         setupViews()
     }
@@ -26,7 +23,7 @@ class ResultView : UIView {
     internal func setupViews() {
         self.backgroundColor = UIColor.systemTeal
         
-        let label = uiFunctions.makeLabel(withText: text, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
+        let label = uiFunctions.makeLabel(withText: resultText, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
         
         addSubview(label)
         

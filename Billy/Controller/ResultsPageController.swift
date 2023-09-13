@@ -10,7 +10,7 @@ import UIKit
 
 class ResultsPageController : UIViewController {
     
-    let uiView = ResultsPageView()
+    var uiView = ResultsPageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

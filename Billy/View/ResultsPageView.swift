@@ -10,10 +10,11 @@ import UIKit
 struct ResultsPageView {
     
     let uiFunctions = UIFunctions()
+    var calculationLogic = CalculationLogic()
     
-    internal func setupViews(on view : UIView) {
+    internal mutating func setupViews(on view : UIView) {
         let label = uiFunctions.makeLabel(withText: "The Lucky One Is :", withSize: 20, withFont: "ChalkboardSE-Regular", alignment: .left)
-        let resultView = ResultView(text: "John")
+        let resultView = ResultView(text: calculationLogic.calculateAmount())
         let button = uiFunctions.makeButton(withText: "Main Menu", withTextSize: 20, configuration: UIButton.Configuration.tinted())
         
         view.addSubview(label)

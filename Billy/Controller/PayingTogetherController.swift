@@ -10,34 +10,26 @@ import UIKit
 class PayingTogetherController : UIViewController {
     
     var uiView = PayingTogetherView()
+    let calculationLogic = CalculationLogic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        uiView.setupViews(on: view, target: self, action: #selector(buttonPressed), tipAction: #selector(tipButtonPressed))
+        uiView.setupViews(on: view, target: self, action: #selector(buttonPressed), tipAction: #selector(tipButtonPressed), numberAction: #selector(plusMinusPressed))
+    }
+    
+    @objc func plusMinusPressed(_ sender: UIButton?) {
+        calculationLogic.calculateNewNumber(button: sender)
     }
     
     @objc func tipButtonPressed(_ sender: UIButton?) {
-        switch sender?.titleLabel?.text {
-        case "0%":
-//            print("tip: 0%")
-        case "10%":
-//            print("tip: 10%")
-        case "15%":
-//            print("tip: 15%")
-        case "20%":
-//            print("tip: 20%")
-        default: break
-        }
+        calculationLogic.determineTip(button: sender)
     }
     
     @objc func buttonPressed() {
         let destinationVC = ResultsPageController()
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true)
-        
-//        print(textField.text ?? 10)
-//        print(numberLabel.text!)
     }
     
 }

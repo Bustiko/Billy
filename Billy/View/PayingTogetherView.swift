@@ -22,7 +22,7 @@ struct PayingTogetherView {
     
     var tipButtons : [UIButton] = []
     
-    internal mutating func setupViews(on view : UIView, target : Any?, action : Selector?, tipAction : Selector?) {
+    internal mutating func setupViews(on view : UIView, target : Any?, action : Selector?, tipAction : Selector?, numberAction : Selector?) {
         let label1 = uiFunctions.makeLabel(withText: "Bill Total :", withSize: 20, withFont: font, alignment: .left)
         let textFieldView = TextFieldView(placeHolder: "27.56", textSize: 40)
         
@@ -65,6 +65,10 @@ struct PayingTogetherView {
             
         }
         
+        if let safeNumberAction = numberAction {
+            minusButton.addTarget(self, action: safeNumberAction, for: .touchUpInside)
+            plusButton.addTarget(self, action: safeNumberAction, for: .touchUpInside)
+        }
         
         NSLayoutConstraint.activate([
             label1.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: 16),

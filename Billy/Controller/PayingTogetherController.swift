@@ -35,6 +35,7 @@ class PayingTogetherController : UIViewController {
         let destinationVC = ResultsPageController(text: "Amount to be paid per person: ")
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true)
+        
     }
     
 }

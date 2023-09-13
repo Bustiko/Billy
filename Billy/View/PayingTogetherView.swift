@@ -34,7 +34,9 @@ struct PayingTogetherView {
         
         for text in tipButtonTexts {
             let button = uiFunctions.makeButton(withText: text, withTextSize: 25, configuration: UIButton.Configuration.plain())
-            tipButtons.append(button)
+            if tipButtons.count < 4 {
+                tipButtons.append(button)
+            }
         }
         
         

@@ -27,7 +27,7 @@ class TextFieldView : UIView {
     }
     
     internal func setupViews() {
-        self.backgroundColor = UIColor.secondarySystemFill
+        self.backgroundColor = UIColor(red: 0.97, green: 0.82, blue: 0.73, alpha: 1.00)
         
         textField =  uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
 

@@ -60,7 +60,8 @@ struct PayingTogetherView {
         
         for button in tipButtons {
             view.addSubview(button)
-            button.backgroundColor = UIColor.white
+            button.configuration?.baseForegroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+            button.configuration?.baseBackgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
             if let safeTipAction = tipAction {
                 button.addTarget(target, action: safeTipAction, for: .touchUpInside)
             }
@@ -115,6 +116,8 @@ struct PayingTogetherView {
         
         for i in 0..<tipButtons.count {
             if i == 0 {
+                tipButtons[i].configuration?.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+                tipButtons[i].configuration?.baseForegroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
                 tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
                 tipButtons[i].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
                 tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true

@@ -14,7 +14,7 @@ class PayingTogetherController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         uiView.setupViews(on: view, target: self, action: #selector(buttonPressed), tipAction: #selector(tipButtonPressed), numberAction: #selector(plusMinusPressed))
     }
     
@@ -24,9 +24,11 @@ class PayingTogetherController : UIViewController {
     
     @objc func tipButtonPressed(_ sender: UIButton?) {
         for button in tipButtons {
-            button.isSelected = false
+            button.configuration?.baseForegroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+            button.configuration?.baseBackgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         }
-        sender?.isSelected = true
+        sender?.configuration?.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+        sender?.configuration?.baseForegroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         calculationLogic.determineTip(button: sender)
     }
     

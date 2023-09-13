@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         uiView.setupViews(on: view, target: self, action: #selector(buttonPressed))
     }
     

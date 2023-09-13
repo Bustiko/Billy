@@ -15,7 +15,7 @@ struct UIFunctions {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         label.text = text
-        label.textColor = UIColor.black
+        label.textColor = UIColor(red: 0.67, green: 0.29, blue: 0.19, alpha: 1.00)
         label.font = UIFont(name: font, size: size)
         label.textAlignment = alignment
         
@@ -27,7 +27,9 @@ struct UIFunctions {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        var configuration = UIButton.Configuration.tinted()
+        
+        var configuration = UIButton.Configuration.filled()
+        configuration.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
         configuration.cornerStyle = .capsule
         configuration.title = text
         configuration.titleAlignment = .center
@@ -46,13 +48,15 @@ struct UIFunctions {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        var config = configuration
+        var config = UIButton.Configuration.filled()
         
         var container = AttributeContainer()
         container.font = UIFont(name: "ChalkboardSE-Regular", size: size)
+
         config.attributedTitle = AttributedString(text, attributes: container)
         config.cornerStyle = .capsule
-        
+        config.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+        config.baseForegroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         button.configuration = config
         
         

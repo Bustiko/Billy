@@ -21,7 +21,7 @@ class ResultView : UIView {
     }
     
     internal func setupViews() {
-        self.backgroundColor = UIColor.systemTeal
+        self.backgroundColor = UIColor(red: 0.97, green: 0.82, blue: 0.73, alpha: 1.00)
         
         let label = uiFunctions.makeLabel(withText: resultText, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
         

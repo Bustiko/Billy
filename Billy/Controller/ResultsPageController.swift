@@ -23,7 +23,7 @@ class ResultsPageController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         var uiView = ResultsPageView(text: text)
         uiView.setupViews(on: view, target: self, action: #selector(buttonPressed))
     }

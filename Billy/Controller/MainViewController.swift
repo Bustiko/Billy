@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var uiFunctions = MainScreenView()
 
@@ -18,7 +18,9 @@ class ViewController: UIViewController {
     
     @objc func buttonPressed(_ sender : UIButton?) {
         if sender?.titleLabel?.text == "We're paying together" {
-            
+            let dVC = PayingTogetherController()
+            dVC.modalPresentationStyle = .fullScreen
+            self.present(dVC, animated: true)
         }else {
             
         }

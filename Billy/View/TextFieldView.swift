@@ -25,9 +25,12 @@ class TextFieldView : UIView {
     }
     
     internal func setupViews() {
-        self.backgroundColor = UIColor.systemTeal
+        self.backgroundColor = UIColor.secondarySystemFill
         
         let textField = uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
+        
+        self.addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             textField.centerXAnchor.constraint(equalTo: self.centerXAnchor),

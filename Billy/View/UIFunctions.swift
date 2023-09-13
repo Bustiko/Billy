@@ -22,7 +22,6 @@ struct UIFunctions {
         return label
     }
     
-    
     internal func makePlusMinusButton(withText text : String) -> UIButton {
         
         let button = UIButton()

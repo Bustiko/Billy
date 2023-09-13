@@ -55,5 +55,16 @@ struct UIFunctions {
     }
     
     
+    internal func makeStackView() -> UIStackView {
+        let view = UIStackView()
+
+        view.axis = .vertical
+        view.spacing = 20
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+    
+    
     
 }

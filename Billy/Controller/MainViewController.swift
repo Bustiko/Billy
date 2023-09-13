@@ -9,11 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var uiFunctions = MainScreenView()
+    var uiView = MainScreenView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        uiFunctions.setupViews(on: view, target: self, action: #selector(buttonPressed))
+        uiView.setupViews(on: view, target: self, action: #selector(buttonPressed))
     }
     
     @objc func buttonPressed(_ sender : UIButton?) {
@@ -22,7 +22,9 @@ class MainViewController: UIViewController {
             dVC.modalPresentationStyle = .fullScreen
             self.present(dVC, animated: true)
         }else {
-            
+            let destinationVC = WhoPaysController()
+            destinationVC.modalPresentationStyle = .fullScreen
+            self.present(destinationVC, animated: true)
         }
         
     }

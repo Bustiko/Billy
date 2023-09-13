@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94AA74D2AB1B806005708A4 /* WhoPaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA74C2AB1B806005708A4 /* WhoPaysController.swift */; };
+		C94AA74F2AB1B811005708A4 /* WhoPaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA74E2AB1B811005708A4 /* WhoPaysView.swift */; };
+		C94AA7512AB1B854005708A4 /* ResultsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA7502AB1B854005708A4 /* ResultsPageView.swift */; };
+		C94AA7532AB1B862005708A4 /* ResultsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA7522AB1B862005708A4 /* ResultsPageController.swift */; };
+		C94AA7552AB1BA5A005708A4 /* NamesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA7542AB1BA5A005708A4 /* NamesScrollView.swift */; };
 		C9FDC8AB2AB0673D00E2172A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC8AA2AB0673D00E2172A /* AppDelegate.swift */; };
 		C9FDC8AD2AB0673D00E2172A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC8AC2AB0673D00E2172A /* SceneDelegate.swift */; };
 		C9FDC8AF2AB0673D00E2172A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FDC8AE2AB0673D00E2172A /* MainViewController.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C94AA74C2AB1B806005708A4 /* WhoPaysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoPaysController.swift; sourceTree = "<group>"; };
+		C94AA74E2AB1B811005708A4 /* WhoPaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoPaysView.swift; sourceTree = "<group>"; };
+		C94AA7502AB1B854005708A4 /* ResultsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageView.swift; sourceTree = "<group>"; };
+		C94AA7522AB1B862005708A4 /* ResultsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageController.swift; sourceTree = "<group>"; };
+		C94AA7542AB1BA5A005708A4 /* NamesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesScrollView.swift; sourceTree = "<group>"; };
 		C9FDC8A72AB0673D00E2172A /* Billy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Billy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FDC8AA2AB0673D00E2172A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FDC8AC2AB0673D00E2172A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +106,9 @@
 				C9FDC8C72AB0764F00E2172A /* ResultView.swift */,
 				C9FDC8C92AB07B0800E2172A /* MainScreenView.swift */,
 				C9FDC8CB2AB09DFC00E2172A /* PayingTogetherView.swift */,
+				C94AA7542AB1BA5A005708A4 /* NamesScrollView.swift */,
+				C94AA74E2AB1B811005708A4 /* WhoPaysView.swift */,
+				C94AA7502AB1B854005708A4 /* ResultsPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +118,8 @@
 			children = (
 				C9FDC8AE2AB0673D00E2172A /* MainViewController.swift */,
 				C9FDC8CD2AB09E2700E2172A /* PayingTogetherController.swift */,
+				C94AA74C2AB1B806005708A4 /* WhoPaysController.swift */,
+				C94AA7522AB1B862005708A4 /* ResultsPageController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,13 +197,18 @@
 			files = (
 				C9FDC8CC2AB09DFC00E2172A /* PayingTogetherView.swift in Sources */,
 				C9FDC8AF2AB0673D00E2172A /* MainViewController.swift in Sources */,
+				C94AA7532AB1B862005708A4 /* ResultsPageController.swift in Sources */,
 				C9FDC8C62AB0763900E2172A /* TextFieldView.swift in Sources */,
+				C94AA7552AB1BA5A005708A4 /* NamesScrollView.swift in Sources */,
 				C9FDC8CA2AB07B0800E2172A /* MainScreenView.swift in Sources */,
 				C9FDC8AB2AB0673D00E2172A /* AppDelegate.swift in Sources */,
 				C9FDC8AD2AB0673D00E2172A /* SceneDelegate.swift in Sources */,
 				C9FDC8C42AB067F200E2172A /* UIFunctions.swift in Sources */,
+				C94AA74D2AB1B806005708A4 /* WhoPaysController.swift in Sources */,
 				C9FDC8C82AB0764F00E2172A /* ResultView.swift in Sources */,
 				C9FDC8CE2AB09E2700E2172A /* PayingTogetherController.swift in Sources */,
+				C94AA7512AB1B854005708A4 /* ResultsPageView.swift in Sources */,
+				C94AA74F2AB1B811005708A4 /* WhoPaysView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

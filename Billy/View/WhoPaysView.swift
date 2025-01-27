@@ -33,7 +33,7 @@ struct WhoPaysView {
         let textFieldView = TextFieldView(placeHolder: "Name", textSize: 25)
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         textFieldView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        stackView.addArrangedSubview(textFieldView)
+        Variables.stackView.addArrangedSubview(textFieldView)
         
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),

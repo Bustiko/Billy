@@ -13,4 +13,5 @@ struct Variables {
     static var stackView = UIStackView()
     static var numberLabel = UILabel()
     static var tipButtons : [UIButton] = []
+    static var resultText = ""
 }

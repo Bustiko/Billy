@@ -17,17 +17,17 @@ struct AddingNameLogic {
     }
     
     internal mutating func addNames(button: UIButton?, vc: UIViewController) {
-        if let safeText = textField.text{
+        if let safeText = Variables.textField.text{
             if button?.titleLabel?.text == "+" {
                 names.append(safeText)
                 let textFieldView = TextFieldView(placeHolder: "Name", textSize: 25)
                 textFieldView.translatesAutoresizingMaskIntoConstraints = false
                 textFieldView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-                stackView.addArrangedSubview(textFieldView)
+                Variables.stackView.addArrangedSubview(textFieldView)
             }else {
                 names.append(safeText)
                 let randomNumber = Int.random(in: 0..<names.count)
-                resultText = names[randomNumber]
+                Variables.resultText = names[randomNumber]
             }
         }
     }

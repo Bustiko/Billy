@@ -6,7 +6,7 @@
 //
 
 import UIKit
-var resultText = ""
+
 class ResultView : UIView {
     
     let uiFunctions = UIFunctions()
@@ -23,7 +23,7 @@ class ResultView : UIView {
     internal func setupViews() {
         self.backgroundColor = UIColor(red: 0.97, green: 0.82, blue: 0.73, alpha: 1.00)
         
-        let label = uiFunctions.makeLabel(withText: resultText, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
+        let label = uiFunctions.makeLabel(withText: Variables.resultText, withSize: 50, withFont: "ChalkboardSE-Regular", alignment: .center)
         
         addSubview(label)
         

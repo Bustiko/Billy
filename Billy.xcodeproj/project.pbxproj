@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9312CB32AC33E88001DB843 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9312CB22AC33E88001DB843 /* Variables.swift */; };
 		C94AA74D2AB1B806005708A4 /* WhoPaysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA74C2AB1B806005708A4 /* WhoPaysController.swift */; };
 		C94AA74F2AB1B811005708A4 /* WhoPaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA74E2AB1B811005708A4 /* WhoPaysView.swift */; };
 		C94AA7512AB1B854005708A4 /* ResultsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94AA7502AB1B854005708A4 /* ResultsPageView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9312CB22AC33E88001DB843 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		C94AA74C2AB1B806005708A4 /* WhoPaysController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoPaysController.swift; sourceTree = "<group>"; };
 		C94AA74E2AB1B811005708A4 /* WhoPaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoPaysView.swift; sourceTree = "<group>"; };
 		C94AA7502AB1B854005708A4 /* ResultsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPageView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,7 @@
 		C94AA7542AB1BA5A005708A4 /* NamesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesScrollView.swift; sourceTree = "<group>"; };
 		C955349E2AB213D6007594AF /* CalculationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationLogic.swift; sourceTree = "<group>"; };
 		C95534A02AB22406007594AF /* AddingNameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNameLogic.swift; sourceTree = "<group>"; };
+		C996EBC72D483C88000C0F4E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C9FDC8A72AB0673D00E2172A /* Billy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Billy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FDC8AA2AB0673D00E2172A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9FDC8AC2AB0673D00E2172A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		C9FDC89E2AB0673D00E2172A = {
 			isa = PBXGroup;
 			children = (
+				C996EBC72D483C88000C0F4E /* .gitignore */,
 				C9FDC8A92AB0673D00E2172A /* Billy */,
 				C9FDC8A82AB0673D00E2172A /* Products */,
 			);
@@ -98,6 +102,7 @@
 		C9FDC8BE2AB0678500E2172A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C9312CB22AC33E88001DB843 /* Variables.swift */,
 				C955349E2AB213D6007594AF /* CalculationLogic.swift */,
 				C95534A02AB22406007594AF /* AddingNameLogic.swift */,
 			);
@@ -209,6 +214,7 @@
 				C9FDC8CA2AB07B0800E2172A /* MainScreenView.swift in Sources */,
 				C95534A12AB22406007594AF /* AddingNameLogic.swift in Sources */,
 				C955349F2AB213D6007594AF /* CalculationLogic.swift in Sources */,
+				C9312CB32AC33E88001DB843 /* Variables.swift in Sources */,
 				C9FDC8AB2AB0673D00E2172A /* AppDelegate.swift in Sources */,
 				C9FDC8AD2AB0673D00E2172A /* SceneDelegate.swift in Sources */,
 				C9FDC8C42AB067F200E2172A /* UIFunctions.swift in Sources */,

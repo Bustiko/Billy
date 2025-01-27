@@ -6,9 +6,6 @@
 //
 import UIKit
 
-var numberLabel = UILabel()
-var tipButtons : [UIButton] = []
-
 struct PayingTogetherView {
     
     let uiFunctions = UIFunctions()
@@ -27,15 +24,15 @@ struct PayingTogetherView {
         
         let label2 = uiFunctions.makeLabel(withText: "Number of people :", withSize: 20, withFont: font, alignment: .left)
         let minusButton = uiFunctions.makePlusMinusButton(withText: "-")
-        numberLabel = uiFunctions.makeLabel(withText: "1", withSize: 30, withFont: font, alignment: .center)
+        Variables.numberLabel = uiFunctions.makeLabel(withText: "1", withSize: 30, withFont: font, alignment: .center)
         let plusButton = uiFunctions.makePlusMinusButton(withText: "+")
         
         let label3 = uiFunctions.makeLabel(withText: "Tip :", withSize: 20, withFont: font, alignment: .left)
         
         for text in tipButtonTexts {
             let button = uiFunctions.makeButton(withText: text, withTextSize: 25, configuration: UIButton.Configuration.plain())
-            if tipButtons.count < 4 {
-                tipButtons.append(button)
+            if Variables.tipButtons.count < 4 {
+                Variables.tipButtons.append(button)
             }
         }
         
@@ -51,14 +48,14 @@ struct PayingTogetherView {
         view.addSubview(label2)
         view.addSubview(label3)
         view.addSubview(minusButton)
-        view.addSubview(numberLabel)
+        view.addSubview(Variables.numberLabel)
         view.addSubview(plusButton)
         view.addSubview(bigButton)
         
         view.addSubview(textFieldView)
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         
-        for button in tipButtons {
+        for button in Variables.tipButtons {
             view.addSubview(button)
             button.configuration?.baseForegroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
             button.configuration?.baseBackgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
@@ -90,12 +87,12 @@ struct PayingTogetherView {
             minusButton.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
             minusButton.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
             minusButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
-            minusButton.trailingAnchor.constraint(equalTo: numberLabel.leadingAnchor, constant: -90),
+            minusButton.trailingAnchor.constraint(equalTo: Variables.numberLabel.leadingAnchor, constant: -90),
             minusButton.heightAnchor.constraint(equalToConstant: 40),
             minusButton.widthAnchor.constraint(equalToConstant: 50),
             
-            numberLabel.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
-            numberLabel.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
+            Variables.numberLabel.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
+            Variables.numberLabel.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
             
             plusButton.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 45),
             plusButton.bottomAnchor.constraint(equalTo: label3.topAnchor, constant: -47),
@@ -114,22 +111,22 @@ struct PayingTogetherView {
             
         ])
         
-        for i in 0..<tipButtons.count {
+        for i in 0..<Variables.tipButtons.count {
             if i == 0 {
-                tipButtons[i].configuration?.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
-                tipButtons[i].configuration?.baseForegroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
-                tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
-                tipButtons[i].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
-                tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
-            }else if i != 0 && i != tipButtons.count - 1 {
-                tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
-                tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
-                tipButtons[i].leadingAnchor.constraint(equalTo: tipButtons[i-1].trailingAnchor, constant: 20).isActive = true
-                tipButtons[i].trailingAnchor.constraint(equalTo: tipButtons[i+1].leadingAnchor, constant: -20).isActive = true
+                Variables.tipButtons[i].configuration?.baseBackgroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
+                Variables.tipButtons[i].configuration?.baseForegroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
+                Variables.tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
+                Variables.tipButtons[i].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25).isActive = true
+                Variables.tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
+            }else if i != 0 && i != Variables.tipButtons.count - 1 {
+                Variables.tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
+                Variables.tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
+                Variables.tipButtons[i].leadingAnchor.constraint(equalTo: Variables.tipButtons[i-1].trailingAnchor, constant: 20).isActive = true
+                Variables.tipButtons[i].trailingAnchor.constraint(equalTo: Variables.tipButtons[i+1].leadingAnchor, constant: -20).isActive = true
             }else {
-                tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
-                tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
-                tipButtons[i].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25).isActive = true
+                Variables.tipButtons[i].topAnchor.constraint(equalTo: label3.bottomAnchor, constant: 22).isActive = true
+                Variables.tipButtons[i].bottomAnchor.constraint(equalTo: bigButton.topAnchor, constant: -125).isActive = true
+                Variables.tipButtons[i].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25).isActive = true
             }
         }
         

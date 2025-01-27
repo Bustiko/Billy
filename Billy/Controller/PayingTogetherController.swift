@@ -23,7 +23,7 @@ class PayingTogetherController : UIViewController {
     }
     
     @objc func tipButtonPressed(_ sender: UIButton?) {
-        for button in tipButtons {
+        for button in Variables.tipButtons {
             button.configuration?.baseForegroundColor = UIColor(red: 0.84, green: 0.44, blue: 0.29, alpha: 1.00)
             button.configuration?.baseBackgroundColor = UIColor(red: 0.97, green: 0.94, blue: 0.90, alpha: 1.00)
         }

@@ -7,8 +7,6 @@
 
 import UIKit
 
-var textField = UITextField()
-
 class TextFieldView : UIView {
     
     let uiFunctions = UIFunctions()
@@ -29,15 +27,15 @@ class TextFieldView : UIView {
     internal func setupViews() {
         self.backgroundColor = UIColor(red: 0.97, green: 0.82, blue: 0.73, alpha: 1.00)
         
-        textField =  uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
+        Variables.textField =  uiFunctions.makeTextField(withPlaceHolder: placeHolder, textSize: textSize)
 
         
-        self.addSubview(textField)
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(Variables.textField)
+        Variables.textField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            textField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            textField.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            Variables.textField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            Variables.textField.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
         
     }

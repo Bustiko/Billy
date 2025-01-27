@@ -7,8 +7,6 @@
 
 import UIKit
 
-var stackView = UIStackView()
-
 class NamesScrollView : UIScrollView {
     
     let uiFunctions = UIFunctions()
@@ -23,16 +21,16 @@ class NamesScrollView : UIScrollView {
     }
     
     internal func setupView() {
-        stackView = uiFunctions.makeStackView()
+        Variables.stackView = uiFunctions.makeStackView()
         
-        addSubview(stackView)
+        addSubview(Variables.stackView)
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -25),
-            stackView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            Variables.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
+            Variables.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -25),
+            Variables.stackView.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            Variables.stackView.topAnchor.constraint(equalTo: self.topAnchor),
+            Variables.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
    
